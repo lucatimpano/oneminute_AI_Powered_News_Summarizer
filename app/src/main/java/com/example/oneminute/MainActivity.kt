@@ -1,6 +1,11 @@
 package com.example.oneminute
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.ListView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -9,10 +14,41 @@ import androidx.core.view.WindowInsetsCompat
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Thread.sleep(3000)
+
+        Thread.sleep(2000)
         installSplashScreen()
+
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        //intent esplicito
+        val explicitButton: Button = findViewById<Button>(R.id.chatButton)
+
+        //rendo il bottono cliccabile
+        explicitButton.setOnClickListener{
+            val explicitIntent = Intent(this, Chat::class.java)
+            startActivity(explicitIntent)
+        }
+
+        val listaNotizie: ListView = findViewById<ListView>(R.id.lista)
+        val listItem = arrayOf(
+            "Notizia 1", "Notizia 2", "Notizia 3",
+            "Notizia 4", "Notizia 5", "Notizia 6",
+            "Notizia 4", "Notizia 5", "Notizia 6",
+            "Notizia 4", "Notizia 5", "Notizia 6",
+            "Notizia 4", "Notizia 5", "Notizia 6",
+            "Notizia 4", "Notizia 5", "Notizia 6",
+            "Notizia 4", "Notizia 5", "Notizia 6"
+        )
+
+        val listAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1,listItem)
+        listaNotizie.adapter = listAdapter
+        
+        listaNotizie.setOnItemClickListener { parent, view, position, id ->
+            val selectedItem = parent.getItemAtPosition(position) as String
+            Toast.makeText(this, "Hai cliccato su $selectedItem", Toast.LENGTH_SHORT).show()
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
