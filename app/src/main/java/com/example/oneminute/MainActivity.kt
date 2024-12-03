@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.ListView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -48,6 +50,11 @@ class MainActivity : AppCompatActivity() {
             val selectedItem = parent.getItemAtPosition(position) as String
             Toast.makeText(this, "Hai cliccato su $selectedItem", Toast.LENGTH_SHORT).show()
         }
+
+        val logo: ImageView = findViewById<ImageView>(R.id.logo)
+
+        val testo: TextView = findViewById<TextView>(R.id.Scritta_Benvenuto)
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
