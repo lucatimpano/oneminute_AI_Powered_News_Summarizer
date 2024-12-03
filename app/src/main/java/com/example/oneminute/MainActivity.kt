@@ -13,9 +13,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.FragmentManager
+import com.example.oneminute.databinding.ActivityMainBinding
+
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var fragmentManager : FragmentManager
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //binding = ActivityMainBinding.inflate(layoutInflaterZ)
 
         Thread.sleep(2000)
         installSplashScreen()
@@ -23,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        //intent esplicito
+        /*intent esplicito
         val explicitButton: Button = findViewById<Button>(R.id.chatButton)
 
         //rendo il bottono cliccabile
@@ -31,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             val explicitIntent = Intent(this, Chat::class.java)
             startActivity(explicitIntent)
         }
-
+        */
         val listaNotizie: ListView = findViewById<ListView>(R.id.lista)
         val listItem = arrayOf(
             "Notizia 1", "Notizia 2", "Notizia 3",

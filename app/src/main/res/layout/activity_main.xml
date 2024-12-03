@@ -11,10 +11,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/black"> <!-- Nero fisso -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/round_corner"
+            app:itemRippleColor="@color/accent_color"
+            app:itemIconTint="@color/white"
+            app:menu="@menu/navigation_item"/>
     </RelativeLayout>
 
 
-    <Button
+    <!--<Button
         android:id="@+id/chatButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +36,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.976" />-->
 
     <ListView
         android:id="@+id/lista"
