@@ -3,16 +3,21 @@
 
     <item android:id="@+id/homeId"
         android:icon="@drawable/icons8_casa_512"
-        android:title="Home" />
+        android:title="Home"
+        android:layout_marginTop="8dp"/>
     <item android:id="@+id/chatId"
         android:icon="@drawable/icons8_ai_96"
-        android:title="AI chat" />
+        android:title="AI chat"
+        android:layout_marginTop="8dp"/>
     <item android:id="@+id/searchId"
         android:icon="@drawable/icons8_ricerca_64"
-        android:title="Search" />
+        android:title="Search"
+        android:layout_marginTop="8dp"/>
     <item android:id="@+id/mappeId"
         android:icon="@drawable/icons8_mappa_96"
-        android:title="Vicino a me" />
+        android:title="Local"
+        android:layout_marginTop="8dp"/>
+
 
 
 </menu>

@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         Thread.sleep(2000)
         installSplashScreen()
 
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
         /*intent esplicito
