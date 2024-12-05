@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_homePage_fragment_to_search_fragment"
             app:destination="@id/search_fragment" />
+        <action
+            android:id="@+id/action_homePage_fragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
     </fragment>
     <fragment
         android:id="@+id/nearMe_fragment"
@@ -33,4 +36,13 @@
         android:id="@+id/search_fragment"
         android:name="com.example.oneminute.ui.fragments.search_fragment"
         android:label="search_fragment" />
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.oneminute.ui.fragments.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article">
+        <argument
+            android:name="article"
+            app:argType="com.example.oneminute.models.Article"/>
+    </fragment>
 </navigation>
