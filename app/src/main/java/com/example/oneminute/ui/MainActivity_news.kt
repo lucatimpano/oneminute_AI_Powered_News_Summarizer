@@ -1,25 +1,23 @@
-package com.example.oneminute
+package com.example.oneminute.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentManager
-import com.example.oneminute.databinding.ActivityMainBinding
+import com.example.oneminute.R
+//import com.example.oneminute.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity_news : AppCompatActivity() {
 
     private lateinit var fragmentManager : FragmentManager
-    private lateinit var binding: ActivityMainBinding
+    //private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
 
         //enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_news)
 
         /*intent esplicito
         val explicitButton: Button = findViewById<Button>(R.id.chatButton)
@@ -40,7 +38,7 @@ class MainActivity : AppCompatActivity() {
             val explicitIntent = Intent(this, Chat::class.java)
             startActivity(explicitIntent)
         }
-        */
+
         val listaNotizie: ListView = findViewById<ListView>(R.id.lista)
         val listItem = arrayOf(
             "Notizia 1", "Notizia 2", "Notizia 3",
@@ -60,6 +58,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Hai cliccato su $selectedItem", Toast.LENGTH_SHORT).show()
         }
 
+
+
         val logo: ImageView = findViewById<ImageView>(R.id.logo)
 
         val testo: TextView = findViewById<TextView>(R.id.Scritta_Benvenuto)
@@ -70,5 +70,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+         */
     }
 }
