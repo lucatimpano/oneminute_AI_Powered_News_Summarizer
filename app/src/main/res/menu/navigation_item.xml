@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/homeId"
+    <item android:id="@+id/homePage_fragment"
         android:icon="@drawable/icons8_casa_512"
         android:title="Home"
         android:layout_marginTop="8dp"/>
-    <item android:id="@+id/chatId"
+    <item android:id="@+id/AIchat_fragment"
         android:icon="@drawable/icons8_ai_96"
         android:title="AI chat"
         android:layout_marginTop="8dp"/>
-    <item android:id="@+id/searchId"
+    <item android:id="@+id/search_fragment"
         android:icon="@drawable/icons8_ricerca_64"
         android:title="Search"
         android:layout_marginTop="8dp"/>
-    <item android:id="@+id/mappeId"
+    <item android:id="@+id/nearMe_fragment"
         android:icon="@drawable/icons8_mappa_96"
         android:title="Local"
         android:layout_marginTop="8dp"/>

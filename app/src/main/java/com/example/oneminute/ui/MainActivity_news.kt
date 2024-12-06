@@ -11,7 +11,13 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.oneminute.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
 //import com.example.oneminute.databinding.ActivityMainBinding
 
 class MainActivity_news : AppCompatActivity() {
@@ -29,6 +35,11 @@ class MainActivity_news : AppCompatActivity() {
 
         //enableEdgeToEdge()
         setContentView(R.layout.activity_main_news)
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.newsNavHostFragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.setupWithNavController(navController)
 
         /*intent esplicito
         val explicitButton: Button = findViewById<Button>(R.id.chatButton)
