@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homePage_fragment">
+
+    <fragment
+        android:id="@+id/AIchat_fragment"
+        android:name="com.example.oneminute.ui.fragments.AIchat_fragment"
+        android:label="fragment_a_ichat_fragment"
+        tools:layout="@layout/fragment_a_ichat_fragment" />
+    <fragment
+        android:id="@+id/homePage_fragment"
+        android:name="com.example.oneminute.ui.fragments.HomePage_fragment"
+        android:label="HomePage_fragment" >
+        <action
+            android:id="@+id/action_homePage_fragment_to_nearMe_fragment"
+            app:destination="@id/nearMe_fragment" />
+        <action
+            android:id="@+id/action_homePage_fragment_to_AIchat_fragment"
+            app:destination="@id/AIchat_fragment" />
+        <action
+            android:id="@+id/action_homePage_fragment_to_search_fragment"
+            app:destination="@id/search_fragment" />
+        <action
+            android:id="@+id/action_homePage_fragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nearMe_fragment"
+        android:name="com.example.oneminute.ui.fragments.NearMe_fragment"
+        android:label="fragment_near_me_fragment"
+        tools:layout="@layout/fragment_near_me_fragment" />
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.example.oneminute.ui.fragments.search_fragment"
+        android:label="search_fragment" />
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.oneminute.ui.fragments.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article">
+        <argument
+            android:name="article"
+            app:argType="com.example.oneminute.models.Article"/>
+    </fragment>
+</navigation>
