@@ -6,11 +6,6 @@
     app:startDestination="@id/homePage_fragment">
 
     <fragment
-        android:id="@+id/AIchat_fragment"
-        android:name="com.example.oneminute.ui.fragments.AIchat_fragment"
-        android:label="fragment_a_ichat_fragment"
-        tools:layout="@layout/fragment_a_ichat_fragment" />
-    <fragment
         android:id="@+id/homePage_fragment"
         android:name="com.example.oneminute.ui.fragments.HomePage_fragment"
         android:label="HomePage_fragment" >
@@ -18,14 +13,14 @@
             android:id="@+id/action_homePage_fragment_to_nearMe_fragment"
             app:destination="@id/nearMe_fragment" />
         <action
-            android:id="@+id/action_homePage_fragment_to_AIchat_fragment"
-            app:destination="@id/AIchat_fragment" />
-        <action
             android:id="@+id/action_homePage_fragment_to_search_fragment"
             app:destination="@id/search_fragment" />
         <action
             android:id="@+id/action_homePage_fragment_to_articleFragment"
             app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_homePage_fragment_to_AIchatfragment2"
+            app:destination="@id/AIchatfragment2" />
     </fragment>
     <fragment
         android:id="@+id/nearMe_fragment"
@@ -45,4 +40,8 @@
             android:name="article"
             app:argType="com.example.oneminute.models.Article"/>
     </fragment>
+    <fragment
+        android:id="@+id/AIchatfragment2"
+        android:name="AIchatfragment"
+        android:label="AIchatfragment" />
 </navigation>

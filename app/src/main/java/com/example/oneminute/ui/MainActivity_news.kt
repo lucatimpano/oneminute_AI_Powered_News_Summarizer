@@ -15,6 +15,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.oneminute.BuildConfig
 import com.example.oneminute.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

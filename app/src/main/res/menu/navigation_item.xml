@@ -5,7 +5,7 @@
         android:icon="@drawable/icons8_casa_512"
         android:title="Home"
         android:layout_marginTop="8dp"/>
-    <item android:id="@+id/AIchat_fragment"
+    <item android:id="@+id/AIchatfragment2"
         android:icon="@drawable/icons8_ai_96"
         android:title="AI chat"
         android:layout_marginTop="8dp"/>
