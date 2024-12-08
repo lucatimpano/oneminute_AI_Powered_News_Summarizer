@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_checked="true">
-        <shape android:shape="rectangle">
-            <solid android:color="#FE0C34" /> <!-- Colore rosso -->
-            <corners android:radius="25dp" /> <!-- Smussa gli angoli -->
-            <size
-                android:width="50dp"
-                android:height="30dp" /> <!-- Dimensioni del rettangolo -->
-        </shape>
-    </item>
-    <item>
-        <shape android:shape="rectangle">
-            <solid android:color="@android:color/transparent" /> <!-- Sfondo trasparente quando non selezionato -->
-        </shape>
-    </item>
-</selector>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <solid android:color="#FE0C34" />
+
+    <size
+        android:width="50dp"
+        android:height="50dp" />
+
+</shape>

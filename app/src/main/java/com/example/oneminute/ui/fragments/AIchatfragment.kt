@@ -14,6 +14,8 @@ class AIchatfragment : Fragment() {
 
     private var _binding: FragmentAiChatFragmentBinding? = null
     private val binding get() = _binding!!
+    val initialPrompt = "Sei un giornalista che scrive articoli di news di nome Tom, ed un utile assistente. Prendi le notizie da questo sito: https://news.google.com/ . Non citarlo mai nelle tue risposte" +
+            "non aggiungere artifizi, il testo deve essere fluido e leggibile senza caratteri strani"
 
 
     override fun onCreateView(
@@ -33,7 +35,7 @@ class AIchatfragment : Fragment() {
                 apiKey = BuildConfig.API_KEY
             )
             runBlocking {
-                val response = generativeModel.generateContent(inputText)
+                val response = generativeModel.generateContent(initialPrompt + inputText)
                 binding.outputTextView.text = response.text
             }
         }

@@ -6,42 +6,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".ui.fragments.AIchat_fragment">
+    tools:context=".ui.fragments.AIchatfragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputTextField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="80dp"
+            android:background="@drawable/round_corner"
+            android:baselineAligned="false"
             android:hint="Enter your prompt" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <ImageButton
         android:id="@+id/promptButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Invia"
-        app:layout_constraintTop_toBottomOf="@id/inputLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
-
-    <TextView
-        android:id="@+id/outputTextView"
-        android:layout_width="0dp"
-        android:hint="Il risultato apparirà qui"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/promptButton"
+        android:background="@drawable/red_circle_background"
+        android:padding="5dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/icons8_inviato_64"
+        app:layout_constraintEnd_toEndOf="@+id/inputLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/inputLayout"
+        app:tint="@color/white" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="170dp"
+        android:layout_marginBottom="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/promptButton">
+
+        <TextView
+            android:id="@+id/outputTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="80dp"
+            android:hint="Il risultato apparirà qui"
+            android:scrollbars="vertical" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
