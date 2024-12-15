@@ -9,7 +9,7 @@ import com.google.ai.client.generativeai.GenerativeModel
 import kotlinx.coroutines.runBlocking
 import com.example.oneminute.BuildConfig
 
-//miao greta gay
+
 class AIchatfragment : Fragment() {
 
     private var _binding: FragmentAiChatFragmentBinding? = null
