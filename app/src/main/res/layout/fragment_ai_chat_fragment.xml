@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="80dp"
-            android:background="@drawable/round_corner"
+            android:background="@drawable/textpromptchat"
             android:baselineAligned="false"
             android:hint="Enter your prompt" />
 

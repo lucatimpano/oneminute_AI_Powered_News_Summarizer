@@ -4,7 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.oneminute.databinding.FragmentAiChatFragmentBinding // Assuming you're using View Binding
+import com.example.oneminute.databinding.FragmentAiChatFragmentBinding
 import com.google.ai.client.generativeai.GenerativeModel
 import kotlinx.coroutines.runBlocking
 import com.example.oneminute.BuildConfig
