@@ -71,8 +71,9 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.androidx.core.splashscreen)
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
-    implementation ("androidx.room:room-runtime:2.6.0")
+    implementation ("androidx.room:room-runtime:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
@@ -83,4 +84,5 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     ksp("com.github.bumptech.glide:compiler:4.12.0")
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+
 }

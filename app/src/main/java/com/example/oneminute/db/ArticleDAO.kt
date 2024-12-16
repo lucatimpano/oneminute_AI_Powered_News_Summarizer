@@ -8,6 +8,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.oneminute.models.Article
 
+
 //L'interfaccia definisce le operazioni principali per accedere e gestire i dati nella tabella articles.
 
 @Dao

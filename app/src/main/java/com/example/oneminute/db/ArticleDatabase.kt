@@ -13,7 +13,6 @@ import com.example.oneminute.models.Article
 @Database(
     entities = [Article::class], //la tabella si basa sull'entità article
     version=1
-
 )
 
 @TypeConverters(Converters::class)//registriamo i convertitori della classe Converters
@@ -33,20 +32,14 @@ abstract class ArticleDatabase: RoomDatabase() {
             //se l'istanza non esiste (quindi il database) allora viene creata con createDatabase(context)
             instance ?: createDatabase(context).also{
                 instance=it
-
             }
         }
 
         private fun createDatabase(context: Context)=
-
             Room.databaseBuilder(
                 context.applicationContext,
                 ArticleDatabase::class.java,
                 "article_db.db"
             ).build()
-
-
         }
-
-
     }
