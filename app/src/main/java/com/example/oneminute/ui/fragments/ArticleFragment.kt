@@ -9,5 +9,5 @@ import com.example.oneminute.R
 
 
 class ArticleFragment : Fragment(R.layout.fragment_article) {
-    lateinit var newsViewModel: NewsViewModel
+
 }
