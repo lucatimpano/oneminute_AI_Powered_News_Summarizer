@@ -90,6 +90,7 @@ class NewsViewModel(application: Application, val newsRepository: NewsRepository
                     oldArticles?.addAll(newArticles)
 
                 }
+                //La classe resource accetta come tipo un messaggio (string) e il data (NewsResponse), nella versione precedente veniva passato solo il data
                 return Resource.Success("Succes",searchNewsResponse ?:resultResponse)
             }
         }
