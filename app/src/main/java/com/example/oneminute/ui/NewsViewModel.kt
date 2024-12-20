@@ -68,7 +68,7 @@ class NewsViewModel(application: Application, val newsRepository: NewsRepository
                     oldArticles?.addAll(newArticles)
 
                 }
-                return Resource.Success(headlinesResponse ?:resultResponse )
+                return Resource.Success("Succes",headlinesResponse ?: resultResponse)
             }
         }
         return Resource.Error(response.message())
@@ -90,7 +90,7 @@ class NewsViewModel(application: Application, val newsRepository: NewsRepository
                     oldArticles?.addAll(newArticles)
 
                 }
-                return Resource.Success(searchNewsResponse ?:resultResponse)
+                return Resource.Success("Succes",searchNewsResponse ?:resultResponse)
             }
         }
         return Resource.Error(response.message())
