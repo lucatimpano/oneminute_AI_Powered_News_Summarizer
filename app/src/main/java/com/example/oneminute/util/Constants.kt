@@ -1,7 +1,7 @@
 package com.example.oneminute.util
 
 class Constants {
-    //contiene un aporzione di codice,  se richiamato con le annotazioni scrivera il codice in automatico
+    //contiene una porzione di codice,  se richiamato con le annotazioni scrivera il codice in automatico
     companion object{
         const val API_KEY = "6c3041a1fa834db9808864e30bef830c"
         const val BASE_URL = "https://newsapi.org"
