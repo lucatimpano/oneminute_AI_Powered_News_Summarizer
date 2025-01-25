@@ -46,7 +46,7 @@ class NewsViewModel(application: Application, val newsRepository: NewsRepository
     }
 
     fun searchNews(searchQuery: String) = viewModelScope.launch {
-        headlinesInternet(searchQuery)
+        searchNewsInternet(searchQuery)
     }
 
 
@@ -142,6 +142,8 @@ class NewsViewModel(application: Application, val newsRepository: NewsRepository
             }
         }
     }
+
+
 
     private suspend fun searchNewsInternet(searchQuery:String){
         newSearchQuery=searchQuery

@@ -21,6 +21,16 @@
         <action
             android:id="@+id/action_homePage_fragment_to_AIchatfragment2"
             app:destination="@id/AIchatfragment2" />
+        <action
+            android:id="@+id/action_homePage_fragment_to_favourite_fragment"
+            app:destination="@id/favourite_fragment" />
+        <action
+            android:id="@+id/action_favourite_fragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_search_fragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/nearMe_fragment"
@@ -44,4 +54,8 @@
         android:id="@+id/AIchatfragment2"
         android:name="AIchatfragment"
         android:label="AIchatfragment" />
+    <fragment
+        android:id="@+id/favourite_fragment"
+        android:name="com.example.oneminute.ui.fragments.Favourite_fragment"
+        android:label="Favourite_fragment" />
 </navigation>

@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Search."
         android:textSize="30sp"
+
         android:textStyle="bold"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
@@ -27,6 +28,8 @@
         android:layout_marginStart="8dp"
         android:padding="8dp"
         android:textSize="14sp"
+        android:background="@drawable/search_border"
+        android:drawableEnd="@drawable/icons8_ricerca_64"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

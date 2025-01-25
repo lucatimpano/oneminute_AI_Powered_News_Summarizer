@@ -11,17 +11,21 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.oneminute.BuildConfig
 import com.example.oneminute.R
+import com.example.oneminute.db.ArticleDatabase
+import com.example.oneminute.repository.NewsRepository
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 //import com.example.oneminute.databinding.ActivityMainBinding
 
 class MainActivity_news : AppCompatActivity() {
+    lateinit var newsViewModel: NewsViewModel
 
     private lateinit var fragmentManager : FragmentManager
     //private lateinit var binding: ActivityMainBinding
@@ -36,6 +40,11 @@ class MainActivity_news : AppCompatActivity() {
 
         //enableEdgeToEdge()
         setContentView(R.layout.activity_main_news)
+
+        // Inizializzazione del ViewModel
+        val newsRepository = NewsRepository(ArticleDatabase(this))
+        val viewModelProviderFactory = NewsViewModelProviderFactory(application, newsRepository)
+        newsViewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.newsNavHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
