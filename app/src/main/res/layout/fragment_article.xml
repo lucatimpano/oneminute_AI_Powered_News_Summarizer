@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.ArticleFragment">
+    android:orientation="vertical"
+    android:padding="16dp">
 
+    <!-- Titolo o Dettagli della Notizia -->
     <TextView
-        android:id="@+id/testo_sezione_notizie"
+        android:id="@+id/articleTitleTextView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Questa è la sezione dove ci sono le notizie" />
+        android:layout_height="wrap_content"
+        android:text="Titolo della notizia"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingBottom="8dp" />
 
-</FrameLayout>
+    <!-- Output del Testo Generato -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/outputTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Risultato generato dall'AI"
+            android:textSize="16sp"
+            android:padding="8dp" />
+    </ScrollView>
+
+</LinearLayout>

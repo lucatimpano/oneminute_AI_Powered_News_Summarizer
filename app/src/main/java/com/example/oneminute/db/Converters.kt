@@ -11,7 +11,7 @@ class Converters {
     //converte source in string
     @TypeConverter
     fun fromSource(source: Source):String{
-        return source.name
+        return source.name ?: "Nome sconosciuto"
     }
 
     //converte la stringa in source
