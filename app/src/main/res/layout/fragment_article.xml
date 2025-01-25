@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
     <!-- Titolo o Dettagli della Notizia -->
@@ -16,11 +15,21 @@
         android:textStyle="bold"
         android:paddingBottom="8dp" />
 
+    <!-- Indicatore di caricamento -->
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
     <!-- Output del Testo Generato -->
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:layout_below="@id/articleTitleTextView"
+        android:layout_marginTop="8dp">
 
         <TextView
             android:id="@+id/outputTextView"
@@ -31,4 +40,4 @@
             android:padding="8dp" />
     </ScrollView>
 
-</LinearLayout>
+</RelativeLayout>
