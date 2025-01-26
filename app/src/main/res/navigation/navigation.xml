@@ -36,7 +36,11 @@
         android:id="@+id/nearMe_fragment"
         android:name="com.example.oneminute.ui.fragments.NearMe_fragment"
         android:label="fragment_near_me_fragment"
-        tools:layout="@layout/fragment_near_me_fragment" />
+        tools:layout="@layout/fragment_near_me_fragment" >
+        <action
+            android:id="@+id/action_nearMe_fragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/search_fragment"
         android:name="com.example.oneminute.ui.fragments.search_fragment"
