@@ -12,7 +12,7 @@ import com.example.oneminute.models.Article
 
 @Database(
     entities = [Article::class], //la tabella si basa sull'entità article
-    version=1
+    version=2
 )
 
 

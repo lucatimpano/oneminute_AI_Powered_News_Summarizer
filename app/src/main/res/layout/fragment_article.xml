@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
@@ -39,5 +40,20 @@
             android:textSize="16sp"
             android:padding="8dp" />
     </ScrollView>
+
+    <!-- Bottone rotondo -->
+    <ImageButton
+        android:id="@+id/roundButton"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:background="@drawable/red_circle_background"
+        android:src="@drawable/icons8_mi_piace_64"
+        android:contentDescription="Mi Piace"
+        android:scaleType="centerInside"
+        android:padding="12dp"
+        app:tint="@android:color/white" />
 
 </RelativeLayout>

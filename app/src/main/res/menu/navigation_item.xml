@@ -18,10 +18,7 @@
         android:title="Local"
         android:layout_marginTop="8dp"/>
     <item android:id="@+id/favourite_fragment"
-        android:icon="@drawable/icons8_mappa_96"
+        android:icon="@drawable/icons8_mi_piace_64"
         android:title="Favourites"
         android:layout_marginTop="8dp"/>
-
-
-
 </menu>

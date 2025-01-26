@@ -28,6 +28,9 @@ class NearMe_fragment : Fragment(), LocationListener {
     private val binding get() = _binding!!
     private lateinit var locationManager: LocationManager
 
+    private var fullAddress: String? = null
+    private var city: String? = null
+
     private val permissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
@@ -96,11 +99,16 @@ class NearMe_fragment : Fragment(), LocationListener {
             try {
                 val geocoder = Geocoder(requireContext(), Locale.getDefault())
                 val addresses = geocoder.getFromLocation(latitude, longitude, 1)
+                Log.e("NearMeFragment", "Geocoding error: ${addresses}")
 
                 withContext(Dispatchers.Main) {
                     if (addresses != null && addresses.isNotEmpty()) {
                         val address = addresses[0]
+                        fullAddress = address.getAddressLine(0) // Indirizzo completo
+                        city = address.locality // Nome della città
                         updateLocationUI(latitude, longitude, address)
+
+                        city?.let { onCityReady(it) }
                     } else {
                         updateLocationUI(latitude, longitude, null)
                     }
@@ -117,12 +125,13 @@ class NearMe_fragment : Fragment(), LocationListener {
     private fun updateLocationUI(latitude: Double, longitude: Double, address: Address?) {
         val addressText = address?.getAddressLine(0) ?: "Address not found"
         binding.locationTextView.text = "Lat: $latitude, Lng: $longitude\nAddress: $addressText"
-
+        /***
         Toast.makeText(
             requireContext(),
             "Location: $latitude, $longitude",
             Toast.LENGTH_SHORT
         ).show()
+        ***/
     }
 
     override fun onProviderEnabled(provider: String) {
@@ -137,4 +146,15 @@ class NearMe_fragment : Fragment(), LocationListener {
         super.onDestroyView()
         _binding = null
     }
+    fun doSomethingWithCity() {
+        if (city != null) {
+            Toast.makeText(requireContext(), "Current city: $city", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(requireContext(), "City not available", Toast.LENGTH_SHORT).show()
+        }
+    }
+    private fun onCityReady(city: String) {
+        Toast.makeText(requireContext(), "Current city: $city", Toast.LENGTH_SHORT).show()
+    }
+
 }

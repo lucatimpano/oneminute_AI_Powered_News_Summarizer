@@ -21,6 +21,7 @@ import com.example.oneminute.R
 import com.example.oneminute.adapters.NewsAdapter
 import com.example.oneminute.databinding.FragmentArticleBinding
 import com.example.oneminute.databinding.FragmentHomePageFragmentBinding
+import com.example.oneminute.models.Source
 import com.example.oneminute.ui.MainActivity_news
 import com.example.oneminute.ui.NewsActivity
 import com.example.oneminute.ui.NewsViewModel
@@ -59,9 +60,12 @@ class HomePage_fragment : Fragment(R.layout.fragment_home_page_fragment) {
         errorText = view.findViewById(R.id.errorText)
 
         newsViewModel = (activity as MainActivity_news).newsViewModel
-        newsAdapter.setOnItemClickListener {
+        newsAdapter.setOnItemClickListener { article ->
+            if (article.source == null){
+                article.source = Source("","")
+            }
             val bundle = Bundle().apply{
-                putSerializable("article",it)
+                putSerializable("article",article)
             }
             findNavController().navigate(R.id.action_homePage_fragment_to_articleFragment,bundle)
         }
