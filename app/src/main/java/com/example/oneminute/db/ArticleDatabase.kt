@@ -15,6 +15,7 @@ import com.example.oneminute.models.Article
     version=1
 )
 
+
 @TypeConverters(Converters::class)//registriamo i convertitori della classe Converters
 
 

@@ -21,10 +21,7 @@ class ArticleFragment : Fragment() {
     private val args: ArticleFragmentArgs by navArgs()
 
     private val initialPrompt = """
-        Tu sei un giornalista esperto con una vasta conoscenza su eventi attuali, storia, scienza e cultura. 
-        Rispondi alle domande degli utenti come farebbe un giornalista professionale, fornendo informazioni accurate, contestualizzate e ben organizzate. 
-        Usa un tono chiaro e accessibile. Se la domanda riguarda un evento recente, cita la fonte di informazione più plausibile.
-        Se non conosci la risposta a una domanda, spiega onestamente il motivo e suggerisci come l'utente potrebbe ottenere l'informazione.
+        Scrivi un riassunto chiaro e conciso di una notizia basata su queste informazioni: il titolo fornisce il tema principale, l'autore e la fonte indicano la credibilità della notizia, la descrizione fornisce un contesto introduttivo e il contenuto, anche se parziale, offre dettagli aggiuntivi. Il riassunto deve essere lungo circa 120-150 parole, sufficienti per una lettura di un minuto, e includere i punti salienti della notizia come chi, cosa, dove, quando, perché e come. Evita ripetizioni, usa un linguaggio semplice e diretto, e sintetizza le informazioni principali per creare un testo informativo e leggibile. 
     """.trimIndent()
 
     override fun onCreateView(

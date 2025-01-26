@@ -60,7 +60,7 @@ class search_fragment : Fragment(R.layout.fragment_search_fragment) {
             val bundle = Bundle().apply{
                 putSerializable("article",it)
             }
-            findNavController().navigate(R.id.action_search_fragment_to_articleFragment,bundle)
+            findNavController().navigate(R.id.action_search_fragment_to_articleFragment2,bundle)
         }
 
         var job: Job? = null

@@ -40,7 +40,11 @@
     <fragment
         android:id="@+id/search_fragment"
         android:name="com.example.oneminute.ui.fragments.search_fragment"
-        android:label="search_fragment" />
+        android:label="search_fragment" >
+        <action
+            android:id="@+id/action_search_fragment_to_articleFragment2"
+            app:destination="@id/articleFragment" />
+    </fragment>
     <fragment
         android:id="@+id/articleFragment"
         android:name="com.example.oneminute.ui.fragments.ArticleFragment"
