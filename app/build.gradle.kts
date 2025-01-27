@@ -84,5 +84,7 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.12.0")
     ksp("com.github.bumptech.glide:compiler:4.12.0")
     implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+    implementation("com.google.android.material:material:1.9.0")
+
 
 }

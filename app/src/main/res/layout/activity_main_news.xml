@@ -21,7 +21,7 @@
     <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="65dp"
         app:itemActiveIndicatorStyle="@color/accent_color"
         android:background="@drawable/round_corner"
@@ -32,6 +32,7 @@
         app:menu="@menu/navigation_item"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
