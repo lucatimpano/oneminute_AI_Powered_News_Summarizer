@@ -49,16 +49,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginLeft="16dp">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="All"
                 android:textColor="@color/white"
-                android:background="@drawable/search_border"
-                android:backgroundTint="@color/black"
-                style="@style/Widget.AppCompat.Button"
                  />
 
             <Button
@@ -66,17 +64,16 @@
                 android:layout_height="wrap_content"
                 android:text="Today"
                 android:textColor="@color/white"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/search_border"
+                android:layout_marginStart="16dp"
+
                 />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Science"
+                android:layout_marginStart="16dp"
                 android:textColor="@color/white"
-                android:layout_marginStart="8dp"
-
                />
 
             <Button
@@ -84,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:text="Business"
                 android:textColor="@color/white"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 />
         </LinearLayout>
     </HorizontalScrollView>
@@ -97,7 +94,7 @@
         android:clipToPadding="false"
         android:paddingBottom="50dp"
         android:layout_marginTop="270dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="0dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

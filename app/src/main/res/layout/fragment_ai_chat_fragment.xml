@@ -58,6 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white" />
 
+
     <!-- Area per il risultato sotto l'input -->
     <ScrollView
         android:layout_width="0dp"

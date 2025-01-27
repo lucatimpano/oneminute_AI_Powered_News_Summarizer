@@ -102,6 +102,7 @@ class HomePage_fragment : Fragment(R.layout.fragment_home_page_fragment) {
         }
 
 
+
     }
 
     var isError = false
