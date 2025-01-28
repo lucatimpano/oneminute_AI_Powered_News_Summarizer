@@ -27,7 +27,11 @@
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:background="@drawable/rounded_corners"
+        />
 
     <TextView
         android:id="@+id/articleSource"

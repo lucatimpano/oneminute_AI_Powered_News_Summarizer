@@ -1,0 +1,5 @@
+<!-- rounded_white_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white" /> <!-- Colore del bordo -->
+    <corners android:radius="16dp" /> <!-- Arrotondamento degli angoli -->
+</shape>

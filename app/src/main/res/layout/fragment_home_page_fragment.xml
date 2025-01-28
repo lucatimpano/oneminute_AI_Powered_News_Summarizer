@@ -52,37 +52,77 @@
             android:orientation="horizontal"
             android:layout_marginLeft="16dp">
 
+            <!-- Bottone All -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_white_background"
+                android:padding="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_margin="8dp">
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="All"
                 android:textColor="@color/white"
-                 />
+                android:backgroundTint="@color/black"
+                android:padding="8dp" />
+        </FrameLayout>
+
+        <!-- Bottone Today -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_white_background"
+            android:padding="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_margin="8dp">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Today"
                 android:textColor="@color/white"
-                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/black"
+                android:padding="8dp" />
+        </FrameLayout>
 
-                />
+        <!-- Bottone Science -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_white_background"
+            android:padding="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_margin="8dp">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Science"
-                android:layout_marginStart="16dp"
                 android:textColor="@color/white"
-               />
+                android:backgroundTint="@color/black"
+                android:padding="8dp" />
+        </FrameLayout>
+
+        <!-- Bottone Business -->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_white_background"
+            android:padding="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_margin="8dp">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Business"
                 android:textColor="@color/white"
-                android:layout_marginStart="16dp"
-                />
+                android:backgroundTint="@color/black"
+                android:padding="8dp" />
+            </FrameLayout>
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -93,7 +133,7 @@
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:paddingBottom="50dp"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="290dp"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
