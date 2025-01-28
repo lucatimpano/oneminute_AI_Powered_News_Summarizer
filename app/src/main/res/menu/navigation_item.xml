@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/homePage_fragment"
-        android:icon="@drawable/icons8_casa_512"
+        android:icon="@drawable/icons8_casa_64"
         android:title="Home"
         android:layout_marginTop="8dp"/>
     <item android:id="@+id/AIchatfragment2"
