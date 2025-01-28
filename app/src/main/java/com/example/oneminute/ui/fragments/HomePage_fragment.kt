@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.AbsListView
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
@@ -35,7 +36,7 @@ class HomePage_fragment : Fragment(R.layout.fragment_home_page_fragment) {
     //in caso di errori di internet viene usata questa sezione
     lateinit var newsViewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
-    lateinit var retryButton: Button
+    lateinit var retryButton: ImageButton
     lateinit var errorText: TextView
     lateinit var itemHeadlinesError: CardView
 
@@ -56,7 +57,7 @@ class HomePage_fragment : Fragment(R.layout.fragment_home_page_fragment) {
         val inflater = requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view: View = inflater.inflate(R.layout.no_internet_error, null)
 
-        retryButton = view.findViewById(R.id.retryButton)
+        retryButton = view.findViewById<ImageButton>(R.id.retryButton)
         errorText = view.findViewById(R.id.errorText)
 
         newsViewModel = (activity as MainActivity_news).newsViewModel

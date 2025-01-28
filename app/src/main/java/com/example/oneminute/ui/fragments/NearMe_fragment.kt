@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AbsListView
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -47,7 +48,7 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
 
     lateinit var newsViewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
-    lateinit var retryButton: Button
+    lateinit var retryButton: ImageButton
     lateinit var errorText: TextView
     lateinit var itemSearchError: CardView
 
@@ -89,7 +90,7 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
         // Inflate e setup di elementi di errore da un layout separato
         val inflatedView: View = layoutInflater.inflate(R.layout.no_internet_error, null)
         itemSearchError = view.findViewById(R.id.itemSearchError)
-        retryButton = inflatedView.findViewById(R.id.retryButton)
+        retryButton = inflatedView.findViewById<ImageButton>(R.id.retryButton)
         errorText = inflatedView.findViewById(R.id.errorText)
 
         // Configura il ViewModel

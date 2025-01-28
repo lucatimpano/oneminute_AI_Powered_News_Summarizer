@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AbsListView
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
@@ -35,7 +36,7 @@ import kotlinx.coroutines.launch
 class search_fragment : Fragment(R.layout.fragment_search_fragment) {
     lateinit var newsViewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
-    lateinit var retryButton: Button
+    lateinit var retryButton: ImageButton
     lateinit var errorText: TextView
     lateinit var itemSearchError: CardView
     lateinit var binding: FragmentSearchFragmentBinding
@@ -50,7 +51,7 @@ class search_fragment : Fragment(R.layout.fragment_search_fragment) {
         val inflater = requireContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val view: View = inflater.inflate(R.layout.no_internet_error, null)
 
-        retryButton = view.findViewById(R.id.retryButton)
+        retryButton = view.findViewById<ImageButton>(R.id.retryButton)
         errorText = view.findViewById(R.id.errorText)
 
         newsViewModel = (activity as MainActivity_news).newsViewModel

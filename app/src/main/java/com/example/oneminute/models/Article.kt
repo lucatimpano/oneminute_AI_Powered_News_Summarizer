@@ -9,15 +9,15 @@ import java.io.Serializable
 )
 data class Article(
     @PrimaryKey(autoGenerate = true)
-    var id: Int ? = null,
-    val author: String,
-    val content: String,
-    val description: String,
-    val publishedAt: String,
-    var source: Source?,
-    val title: String,
-    val url: String,
-    val urlToImage: String
+    var id: Int? = null,
+    val author: String = "Unknown Author",
+    val content: String = "No Content",
+    val description: String = "No Description",
+    val publishedAt: String = "Unknown Date",
+    var source: Source? = null,
+    val title: String = "Untitled",
+    val url: String = "No URL",
+    val urlToImage: String = "No Image URL"
 ): Serializable{
 
     override fun hashCode(): Int {

@@ -22,14 +22,16 @@
             android:text="No Internet"
             android:textAlignment="center" />
 
-        <Button
+        <ImageButton
             android:id="@+id/retryButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
             android:layout_margin="16dp"
-            android:layout_weight="1"
-            android:text="Retry"
-            android:backgroundTint="@color/accent_color"/>
+            android:padding="10dp"
+            android:background="@drawable/red_circle_background"
+            android:src="@drawable/icons8_errore_64"
+            android:scaleType="centerInside"
+            app:tint="@color/white" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
