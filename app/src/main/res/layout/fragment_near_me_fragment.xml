@@ -9,60 +9,59 @@
 
     <!-- Titolo -->
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search."
-        android:textSize="30sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Near Me"
+        android:fontFamily="@font/fontspring_tt_commons_pro_medium"
+        android:textSize="60sp"
+
         android:textStyle="bold"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ProgressBar
+        android:id="@+id/loadingSpinner"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:indeterminate="true"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />/>
 
     <!-- Barra di ricerca -->
     <EditText
         android:id="@+id/searchEdit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Search news..."
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:padding="8dp"
-        android:textSize="14sp"
+        android:layout_width="51dp"
+        android:layout_height="84dp"
         android:background="@drawable/search_border"
         android:drawableEnd="@drawable/icons8_ricerca_64"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Search news..."
+        android:padding="8dp"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerSearch"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Bottone per la localizzazione -->
-    <Button
-        android:id="@+id/getLocationButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Find Near Me"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintTop_toBottomOf="@id/searchEdit"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerSearch"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingBottom="50dp"
         android:clipToPadding="false"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="12dp"
+        android:paddingBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/getLocationButton"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="8dp" />
 
     <!-- Include vista per l'errore -->
     <include

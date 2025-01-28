@@ -77,11 +77,14 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
         // Binding della vista principale
         binding = FragmentNearMeFragmentBinding.bind(view)
         locationManager = requireContext().getSystemService(LocationManager::class.java)
-
+        binding.searchEdit.visibility = View.GONE
+        checkLocationPermission()
         // Configura il bottone per la localizzazione
+        /***
         binding.getLocationButton.setOnClickListener {
-            checkLocationPermission()
+
         }
+        ***/
 
         // Inflate e setup di elementi di errore da un layout separato
         val inflatedView: View = layoutInflater.inflate(R.layout.no_internet_error, null)
@@ -194,6 +197,7 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
                     android.Manifest.permission.ACCESS_FINE_LOCATION
                 ) == PackageManager.PERMISSION_GRANTED
             ) {
+                binding.loadingSpinner.visibility = View.VISIBLE
                 locationManager.requestLocationUpdates(
                     LocationManager.GPS_PROVIDER,
                     5000,
@@ -227,10 +231,12 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
                     } else {
                         updateLocationUI(latitude, longitude, null)
                     }
+                    binding.loadingSpinner.visibility = View.GONE
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     Log.e("NearMeFragment", "Geocoding error: ${e.message}")
+                    binding.loadingSpinner.visibility = View.GONE
                 }
             }
         }
