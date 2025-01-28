@@ -70,12 +70,18 @@ class ArticleFragment : Fragment() {
                     generativeModel.generateContent(prompt)
                 }
                 // Mostra la risposta generata
-                binding.outputTextView.text = response.text
+                if(_binding != null){
+                    binding.outputTextView.text = response.text
+                }
             } catch (e: Exception) {
-                Toast.makeText(context, "Errore nella generazione della risposta", Toast.LENGTH_SHORT).show()
+                if(_binding != null){
+                    Toast.makeText(context, "Errore nella generazione della risposta", Toast.LENGTH_SHORT).show()
+                }
             } finally {
                 // Nascondi il caricamento
-                binding.loadingProgressBar.visibility = View.GONE
+                if(_binding != null){
+                    binding.loadingProgressBar.visibility = View.GONE
+                }
             }
         }
     }
