@@ -65,5 +65,9 @@
     <fragment
         android:id="@+id/favourite_fragment"
         android:name="com.example.oneminute.ui.fragments.Favourite_fragment"
-        android:label="Favourite_fragment" />
+        android:label="Favourite_fragment" >
+        <action
+            android:id="@+id/action_favourite_fragment_to_articleFragment2"
+            app:destination="@id/articleFragment" />
+    </fragment>
 </navigation>

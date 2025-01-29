@@ -10,13 +10,17 @@ import androidx.navigation.fragment.navArgs
 import com.example.oneminute.BuildConfig
 import com.example.oneminute.databinding.FragmentArticleBinding
 import com.example.oneminute.models.Article
+import com.example.oneminute.ui.MainActivity_news
+import com.example.oneminute.ui.NewsViewModel
 import com.google.ai.client.generativeai.GenerativeModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
 
 class ArticleFragment : Fragment() {
 
     private var _binding: FragmentArticleBinding? = null
     private val binding get() = _binding!!
+    lateinit var newsViewModel: NewsViewModel
 
     private val args: ArticleFragmentArgs by navArgs()
 
@@ -31,6 +35,8 @@ class ArticleFragment : Fragment() {
     ): View {
         _binding = FragmentArticleBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        newsViewModel = (activity as MainActivity_news).newsViewModel
 
         // Ottieni l'articolo passato tramite Safe Args
         val article: Article = args.article
@@ -50,6 +56,10 @@ class ArticleFragment : Fragment() {
         binding.articleTitleTextView.text = "${article.title}"
         // Genera automaticamente la risposta
         generateResponse(fullPrompt)
+        binding.roundButton.setOnClickListener {
+            newsViewModel.addToFavourites(article)
+            Snackbar.make(view, "Articolo aggiunto ai preferiti", Snackbar.LENGTH_SHORT).show()
+        }
 
         return view
     }
@@ -85,6 +95,8 @@ class ArticleFragment : Fragment() {
             }
         }
     }
+
+
 
     override fun onDestroyView() {
         super.onDestroyView()
