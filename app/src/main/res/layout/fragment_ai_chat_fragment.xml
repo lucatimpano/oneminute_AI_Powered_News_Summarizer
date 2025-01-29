@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="@color/white"
     android:padding="16dp"
     tools:context=".ui.fragments.AIchatfragment">
 
@@ -25,8 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:hint="Enter your prompt"
-            android:textColorHint="@color/white"
-            android:textColor="@color/white"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
             android:background="@drawable/textpromptchat"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -34,10 +34,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
 
-        android:src="@drawable/logo_col"
+        android:src="@drawable/drawkit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -80,15 +80,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="150dp">
+        android:background="@drawable/rectangle"
+        android:layout_marginBottom="170dp">
 
         <TextView
             android:id="@+id/outputTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
             android:hint="Hi user,\nhow can I help\nyou?"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/black"
             android:fontFamily="@font/fontspring_tt_commons_pro_medium"
             android:textSize="25dp"
             android:scrollbars="vertical"

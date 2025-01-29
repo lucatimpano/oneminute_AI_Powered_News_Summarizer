@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="@color/white">
 
 
     <ImageView
@@ -15,7 +15,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_margin="8dp"
-        android:src="@drawable/logo_col"
+        android:src="@drawable/logo_noback"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -29,11 +29,11 @@
         android:layout_height="wrap_content"
         android:text="Welcome \nUser"
         android:fontFamily="@font/fontspring_tt_commons_pro_medium"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="60sp"
         android:textStyle="bold"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:visibility="visible"
@@ -133,7 +133,7 @@
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:paddingBottom="50dp"
-        android:layout_marginTop="290dp"
+        android:layout_marginTop="270dp"
         android:layout_marginStart="0dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"

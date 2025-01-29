@@ -20,6 +20,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String","APK","\"my_apk_value\"")
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildFeatures {

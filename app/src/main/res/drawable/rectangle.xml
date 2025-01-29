@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Colore di sfondo -->
+    <solid android:color="#e6e6e6"/> <!-- Cambia il colore se necessario -->
+
+    <!-- Angoli arrotondati -->
+    <corners android:radius="16dp"/> <!-- Cambia il raggio per arrotondare di più o di meno -->
+
+    <!-- Bordo opzionale -->
+
+</shape>

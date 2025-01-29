@@ -7,7 +7,7 @@
     android:padding="16dp"
     android:layout_marginBottom="24dp"
     app:cardCornerRadius="16dp"
-    app:cardElevation="0dp"
+    app:cardElevation="10dp"
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     app:cardBackgroundColor="@color/white">
@@ -72,7 +72,7 @@
         android:maxLines="2"
             android:layout_marginLeft="10dp"
         android:text="DESCRIPTION"
-            android:fontFamily="@font/fontspring_tt_commons_pro_medium"
+            android:fontFamily="@font/noticiatext_regular"
         android:textColor="@android:color/darker_gray"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
