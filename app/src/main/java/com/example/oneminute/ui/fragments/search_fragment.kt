@@ -54,8 +54,18 @@ class search_fragment : Fragment(R.layout.fragment_search_fragment) {
         retryButton = view.findViewById<ImageButton>(R.id.retryButton)
         errorText = view.findViewById(R.id.errorText)
 
-        newsViewModel = (activity as MainActivity_news).newsViewModel
         setupSearchRecycler()
+        newsViewModel = (activity as MainActivity_news).newsViewModel
+        binding.searchEdit.text?.clear()
+        newsAdapter.differ.submitList(emptyList())
+
+        // Nasconde l'immagine vuota solo se l'utente non ha ancora cercato
+        if (binding.searchEdit.text.toString().isNotEmpty()) {
+            binding.emptyStateImage.visibility = View.GONE
+            binding.searchEdit.text?.clear() // Pulisce il campo di ricerca
+            newsAdapter.differ.submitList(emptyList()) // Svuota la lista
+        }
+
 
         newsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply{
@@ -72,7 +82,11 @@ class search_fragment : Fragment(R.layout.fragment_search_fragment) {
                 delay(SEARCH_NEWS_TIME_DELAY)
                 editable?.let {
                     if (editable.toString().isNotEmpty()) {
+                        binding.emptyStateImage.visibility = View.GONE  // Nascondi l'immagine quando inizi a cercare
                         newsViewModel.searchNews(editable.toString())
+                    }else{
+                        binding.emptyStateImage.visibility = View.VISIBLE // Mostra l'immagine se il testo è vuoto
+                        binding.recyclerSearch.visibility = View.GONE
                     }
                 }
             }

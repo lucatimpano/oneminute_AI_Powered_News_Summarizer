@@ -65,6 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="All"
+                android:fontFamily="@font/abermono_regular"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/black"
                 android:padding="8dp" />
@@ -83,6 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Today"
+                android:fontFamily="@font/abermono_regular"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/black"
                 android:padding="8dp" />
@@ -101,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Science"
+                android:fontFamily="@font/abermono_regular"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/black"
                 android:padding="8dp" />
@@ -119,6 +122,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Business"
+                android:fontFamily="@font/abermono_regular"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/black"
                 android:padding="8dp" />
@@ -159,6 +163,7 @@
         style="?attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:indeterminateTint="@color/accent_color"
         android:layout_marginBottom="280dp"
         android:background="@android:color/transparent"
         android:visibility="invisible"

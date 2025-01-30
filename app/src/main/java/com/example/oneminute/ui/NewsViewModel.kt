@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -98,8 +99,12 @@ class NewsViewModel(application: Application, val newsRepository: NewsRepository
     }
 
     fun addToFavourites(article: Article)= viewModelScope.launch {
-        newsRepository.upsert(article)
+        try{
+            newsRepository.upsert(article)
 
+        }catch (e: Exception){
+            Toast.makeText(getApplication(), "Error: Impossibile aggiungere l'articolo ai preferiti", Toast.LENGTH_SHORT).show()
+        }
     }
 
     fun getFavouritesNews()=newsRepository.getFavouriteNews()

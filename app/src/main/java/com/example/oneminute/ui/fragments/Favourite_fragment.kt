@@ -72,6 +72,15 @@ class Favourite_fragment : Fragment(R.layout.fragment_favourite_fragment) {
 
         newsViewModel.getFavouritesNews().observe(viewLifecycleOwner, Observer { articles ->
             newsAdapter.differ.submitList(articles)
+            if (articles.isEmpty()) {
+                // Mostra immagine di empty state, nascondi il RecyclerView
+                binding.emptyStateImage.visibility = View.VISIBLE
+                binding.recyclerFavourites.visibility = View.GONE
+            } else {
+                // Nascondi immagine di empty state, mostra il RecyclerView
+                binding.emptyStateImage.visibility = View.GONE
+                binding.recyclerFavourites.visibility = View.VISIBLE
+            }
         })
     }
 

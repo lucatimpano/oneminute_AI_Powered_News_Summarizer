@@ -58,7 +58,7 @@ class ArticleFragment : Fragment() {
         generateResponse(fullPrompt)
         binding.roundButton.setOnClickListener {
             newsViewModel.addToFavourites(article)
-            Snackbar.make(view, "Articolo aggiunto ai preferiti", Snackbar.LENGTH_SHORT).show()
+            Toast.makeText(context, "Articolo aggiunto ai preferiti", Toast.LENGTH_SHORT).show()
         }
 
         return view

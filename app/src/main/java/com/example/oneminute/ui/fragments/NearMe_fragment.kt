@@ -97,6 +97,11 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
         newsViewModel = (activity as MainActivity_news).newsViewModel
         setupNearMeRecycler()
 
+        if (binding.searchEdit.text.toString().isNotEmpty()) {
+            binding.searchEdit.text?.clear() // Pulisce il campo di ricerca
+            newsAdapter.differ.submitList(emptyList()) // Svuota la lista
+        }
+
         newsAdapter.setOnItemClickListener {
             val bundle = Bundle().apply {
                 putSerializable("article", it)

@@ -2,13 +2,21 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Oneminute" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="backgroundColor">@color/black</item>
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Imposta i colori principali -->
+        <item name="colorPrimary">@color/accent_color</item>
+        <item name="colorPrimaryVariant">@color/accent_color</item>
+        <item name="colorSecondary">@color/accent_color</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Personalizza il colore dell'hint di TextInputLayout -->
+        <item name="hintTextColor">@color/accent_color</item>
+        <item name="android:textColorHint">@color/accent_color</item>
     </style>
 
     <style name="Theme.Oneminute" parent="Base.Theme.Oneminute" />
 
-    <style name = "Theme.App.SplashScreen" parent = "Theme.SplashScreen">
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/black</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/logo_col</item>
         <item name="postSplashScreenTheme">@style/Base.Theme.Oneminute</item>
