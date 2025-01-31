@@ -88,6 +88,7 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
             if (found) {
                 binding.roundButton.visibility = View.VISIBLE
             } else {
+                Toast.makeText(requireContext(), "Sto ricavando la città, attendere...", Toast.LENGTH_SHORT).show()
                 checkLocationPermission()
             }
         }
