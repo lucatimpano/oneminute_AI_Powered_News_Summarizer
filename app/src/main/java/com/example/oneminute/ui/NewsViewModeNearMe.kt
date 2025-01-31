@@ -20,7 +20,7 @@ import java.util.Locale.IsoCountryCode
 
 //serve per gestire i dati relativi alle notizie
 
-class NewsViewModel(application: Application, val newsRepository: NewsRepository):AndroidViewModel(application) {
+class NewsViewModeNearMe(application: Application, val newsRepository: NewsRepository):AndroidViewModel(application) {
 
 //la News View Model interagisce con il Repository (NewsRepository) per recuperare i dati e poi li espone alla UI
 // tramite oggetti di tipo MutableLiveData<Resource<NewsResponse>>, che rappresentano lo stato corrente
@@ -31,7 +31,7 @@ class NewsViewModel(application: Application, val newsRepository: NewsRepository
     var headlinesPage = 1 //indica il n° della pagina corrente per le notizie principali
     var headlinesResponse: NewsResponse? = null //memorizza le risposte
 
-    val searchNews:MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
+    val NearMeNews:MutableLiveData<Resource<NewsResponse>> = MutableLiveData()
     var searchNewsPage = 1 //indica il n° della pagina corrente per le notizie ricercate
     var searchNewsResponse: NewsResponse? = null
     var newSearchQuery:String? =null //query di ricerca corrente
@@ -151,19 +151,19 @@ class NewsViewModel(application: Application, val newsRepository: NewsRepository
 
     private suspend fun searchNewsInternet(searchQuery:String){
         newSearchQuery=searchQuery
-        searchNews.postValue(Resource.Loading())
+        NearMeNews.postValue(Resource.Loading())
         try{
             if(internetConnection(this.getApplication())){
                 val response=newsRepository.searchNews(searchQuery,searchNewsPage)
-                searchNews.postValue(handleSearchNewsResponse(response))
+                NearMeNews.postValue(handleSearchNewsResponse(response))
 
             }else{
-                searchNews.postValue(Resource.Error("No internet connection"))
+                NearMeNews.postValue(Resource.Error("No internet connection"))
             }
         }catch (t:Throwable){
             when(t){
-                is IOException ->searchNews.postValue(Resource.Error("Unable to connect"))
-                else -> searchNews.postValue((Resource.Error("No signal")))
+                is IOException ->NearMeNews.postValue(Resource.Error("Unable to connect"))
+                else -> NearMeNews.postValue((Resource.Error("No signal")))
             }
         }
     }

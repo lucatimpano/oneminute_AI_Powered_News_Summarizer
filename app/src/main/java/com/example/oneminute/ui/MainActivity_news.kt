@@ -30,6 +30,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity_news : AppCompatActivity() {
     lateinit var newsViewModel: NewsViewModel
+    lateinit var newsViewModeNearMe: NewsViewModeNearMe
 
     private lateinit var fragmentManager : FragmentManager
     //private lateinit var binding: ActivityMainBinding
@@ -68,6 +69,8 @@ class MainActivity_news : AppCompatActivity() {
         val newsRepository = NewsRepository(ArticleDatabase(this))
         val viewModelProviderFactory = NewsViewModelProviderFactory(application, newsRepository)
         newsViewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
+
+        newsViewModeNearMe = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModeNearMe::class.java)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.newsNavHostFragment) as NavHostFragment
         val navController = navHostFragment.navController

@@ -6,12 +6,9 @@
         <!-- Imposta i colori principali -->
         <item name="colorPrimary">@color/accent_color</item>
         <item name="colorPrimaryVariant">@color/accent_color</item>
-        <item name="colorSecondary">@color/accent_color</item>
+
         <item name="colorOnPrimary">@color/white</item>
 
-        <!-- Personalizza il colore dell'hint di TextInputLayout -->
-        <item name="hintTextColor">@color/accent_color</item>
-        <item name="android:textColorHint">@color/accent_color</item>
     </style>
 
     <style name="Theme.Oneminute" parent="Base.Theme.Oneminute" />

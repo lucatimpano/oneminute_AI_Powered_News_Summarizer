@@ -59,12 +59,13 @@ class search_fragment : Fragment(R.layout.fragment_search_fragment) {
         binding.searchEdit.text?.clear()
         newsAdapter.differ.submitList(emptyList())
 
-        // Nasconde l'immagine vuota solo se l'utente non ha ancora cercato
+        /*** Nasconde l'immagine vuota solo se l'utente non ha ancora cercato
         if (binding.searchEdit.text.toString().isNotEmpty()) {
             binding.emptyStateImage.visibility = View.GONE
             binding.searchEdit.text?.clear() // Pulisce il campo di ricerca
             newsAdapter.differ.submitList(emptyList()) // Svuota la lista
         }
+        ***/
 
 
         newsAdapter.setOnItemClickListener {
@@ -75,20 +76,30 @@ class search_fragment : Fragment(R.layout.fragment_search_fragment) {
         }
 
         var job: Job? = null
-        binding.searchEdit.addTextChangedListener(){ editable ->
-            Log.d("search_fragment", "Testo modificato: ${editable.toString()}") // Debug
+        binding.searchEdit.addTextChangedListener { editable ->
+            val query = editable?.toString().orEmpty()
+
+            // Se non c'è nulla da cercare, mostra l'immagine "vuota" e nascondi la lista
+            if (query.isBlank()) {
+                binding.emptyStateImage.visibility = View.VISIBLE
+                binding.recyclerSearch.visibility = View.GONE
+
+                // Se vuoi, puoi anche svuotare la lista
+                newsAdapter.differ.submitList(emptyList())
+                return@addTextChangedListener
+            }
+
+            // Altrimenti nascondi l'immagine, mostra la recycler e avvia una ricerca "debounced"
+            binding.emptyStateImage.visibility = View.GONE
+            binding.recyclerSearch.visibility = View.VISIBLE
+
+            // Annulla il Job precedente, se esiste
             job?.cancel()
+
+            // Avvia un nuovo Job con il delay di SEARCH_NEWS_TIME_DELAY
             job = MainScope().launch {
                 delay(SEARCH_NEWS_TIME_DELAY)
-                editable?.let {
-                    if (editable.toString().isNotEmpty()) {
-                        binding.emptyStateImage.visibility = View.GONE  // Nascondi l'immagine quando inizi a cercare
-                        newsViewModel.searchNews(editable.toString())
-                    }else{
-                        binding.emptyStateImage.visibility = View.VISIBLE // Mostra l'immagine se il testo è vuoto
-                        binding.recyclerSearch.visibility = View.GONE
-                    }
-                }
+                newsViewModel.searchNews(query)
             }
         }
         newsViewModel.searchNews.observe(viewLifecycleOwner, Observer { response ->

@@ -31,6 +31,7 @@ import com.example.oneminute.adapters.NewsAdapter
 import com.example.oneminute.databinding.FragmentNearMeFragmentBinding
 import com.example.oneminute.databinding.FragmentSearchFragmentBinding
 import com.example.oneminute.ui.MainActivity_news
+import com.example.oneminute.ui.NewsViewModeNearMe
 import com.example.oneminute.ui.NewsViewModel
 import com.example.oneminute.util.Constants
 import com.example.oneminute.util.Constants.Companion.SEARCH_NEWS_TIME_DELAY
@@ -46,7 +47,7 @@ import java.util.Locale
 
 class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationListener {
 
-    lateinit var newsViewModel: NewsViewModel
+    lateinit var newsViewModel: NewsViewModeNearMe
     lateinit var newsAdapter: NewsAdapter
     lateinit var retryButton: ImageButton
     lateinit var errorText: TextView
@@ -94,7 +95,7 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
         errorText = inflatedView.findViewById(R.id.errorText)
 
         // Configura il ViewModel
-        newsViewModel = (activity as MainActivity_news).newsViewModel
+        newsViewModel = (activity as MainActivity_news).newsViewModeNearMe
         setupNearMeRecycler()
 
         if (binding.searchEdit.text.toString().isNotEmpty()) {
@@ -124,7 +125,7 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
         }
 
         // Osserva i cambiamenti nei dati di ricerca
-        newsViewModel.searchNews.observe(viewLifecycleOwner) { response ->
+        newsViewModel.NearMeNews.observe(viewLifecycleOwner) { response ->
             when (response) {
                 is Resource.Success -> {
                     hideProgressBar()
