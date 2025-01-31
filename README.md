@@ -5,12 +5,10 @@
 
 ## Features:
 - **AI-Powered Summaries**: Automatically generated news digests for quick reading.
-- **Category-Based News**: Browse news by topics such as Business, Technology, and Entertainment.
 - **AI Chat Assistant**: Ask questions, get clarifications, and explore topics in depth.
 - **Advanced Search**: Find relevant news using smart keyword suggestions.
 - **Location-Based News**: Discover local news based on your current location.
-- **Personalized Experience**: Save favorite articles and track reading preferences.
-- **Secure Login**: Sign in with email or social accounts for a tailored experience.
+- **Personalized Experience**: Save favorite articles.
 
 ## Technologies Used:
 - **Gemini 1.5 Flash API**: For generating clear and concise news summaries.
