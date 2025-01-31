@@ -36,6 +36,7 @@ class NewsViewModeNearMe(application: Application, val newsRepository: NewsRepos
     var searchNewsResponse: NewsResponse? = null
     var newSearchQuery:String? =null //query di ricerca corrente
     var oldSearchQuery:String?= null //query di ricerca precedente
+    var cityAlreadyFound: MutableLiveData<Boolean> = MutableLiveData(false)
 
 
     init{
@@ -48,6 +49,10 @@ class NewsViewModeNearMe(application: Application, val newsRepository: NewsRepos
 
     fun searchNews(searchQuery: String) = viewModelScope.launch {
         searchNewsInternet(searchQuery)
+    }
+
+    fun setCityAlreadyFound(found: Boolean) {
+        cityAlreadyFound.value = found
     }
 
 

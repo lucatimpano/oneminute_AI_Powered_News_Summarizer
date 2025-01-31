@@ -56,6 +56,8 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
     private lateinit var binding: FragmentNearMeFragmentBinding
     private lateinit var locationManager: LocationManager
 
+    private var cityAlreadyFound: Boolean = false
+
     private var fullAddress: String? = null
     private var city: String? = null
     private var isError = false
@@ -76,11 +78,26 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        newsViewModel = (activity as MainActivity_news).newsViewModeNearMe
         // Binding della vista principale
         binding = FragmentNearMeFragmentBinding.bind(view)
         locationManager = requireContext().getSystemService(LocationManager::class.java)
         binding.searchEdit.visibility = View.GONE
-        checkLocationPermission()
+
+        newsViewModel.cityAlreadyFound.observe(viewLifecycleOwner) { found ->
+            if (found) {
+                binding.roundButton.visibility = View.VISIBLE
+            } else {
+                checkLocationPermission()
+            }
+        }
+
+        binding.roundButton.setOnClickListener {
+            newsViewModel.setCityAlreadyFound(false)
+            checkLocationPermission()
+            Toast.makeText(requireContext(), "Ricarico la città", Toast.LENGTH_SHORT).show()
+        }
+
         // Configura il bottone per la localizzazione
         /***
         binding.getLocationButton.setOnClickListener {
@@ -95,7 +112,7 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
         errorText = inflatedView.findViewById(R.id.errorText)
 
         // Configura il ViewModel
-        newsViewModel = (activity as MainActivity_news).newsViewModeNearMe
+
         setupNearMeRecycler()
 
         if (binding.searchEdit.text.toString().isNotEmpty()) {
@@ -232,6 +249,7 @@ class NearMe_fragment : Fragment(R.layout.fragment_near_me_fragment), LocationLi
                     if (addresses != null && addresses.isNotEmpty()) {
                         val address = addresses[0]
                         fullAddress = address.getAddressLine(0)
+                        newsViewModel.setCityAlreadyFound(true)
                         city = address.locality
                         updateLocationUI(latitude, longitude, address)
                         city?.let { onCityReady(it) }

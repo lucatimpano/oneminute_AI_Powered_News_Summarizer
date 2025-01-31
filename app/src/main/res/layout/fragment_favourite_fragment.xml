@@ -32,7 +32,7 @@
     <ImageView
         android:id="@+id/emptyStateImage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/character"
         android:visibility="gone"
