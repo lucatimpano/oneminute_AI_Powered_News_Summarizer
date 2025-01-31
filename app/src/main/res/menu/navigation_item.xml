@@ -15,10 +15,10 @@
         android:layout_marginTop="8dp"/>
     <item android:id="@+id/nearMe_fragment"
         android:icon="@drawable/icons8_mappa_96"
-        android:title="Local"
+        android:title="Near Me"
         android:layout_marginTop="8dp"/>
     <item android:id="@+id/favourite_fragment"
         android:icon="@drawable/icons8_mi_piace_64"
-        android:title="Favourites"
+        android:title="Favs"
         android:layout_marginTop="8dp"/>
 </menu>
