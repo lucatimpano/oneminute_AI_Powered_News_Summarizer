@@ -51,6 +51,7 @@ Consider disabling "Install unknown apps" afterward for security.
 <img src="https://github.com/user-attachments/assets/8d8b266c-f168-4fe6-891a-716996cbf21e" width="200">
 <img src="https://github.com/user-attachments/assets/729091e4-bbe6-4637-928a-31817c9de584" width="200">
 <img src="https://github.com/user-attachments/assets/f0adbcb9-143f-4f72-a546-f307c1016da1" width="200">
+
 ## FAQ
 
 #### Will this app be updated in the future?
