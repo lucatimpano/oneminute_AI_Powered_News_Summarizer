@@ -45,12 +45,12 @@ Unlike other news apps, **1 Minute** leverages generative AI to provide dynamic 
 Consider disabling "Install unknown apps" afterward for security.
     
 ## Screenshots
-![Image](https://github.com/user-attachments/assets/b972dc53-940a-43f6-9f49-f5e7234796d6)
-![Image](https://github.com/user-attachments/assets/ca8dc97c-ec71-4f28-b7bb-e8f9065df8ab)
-![Image](https://github.com/user-attachments/assets/8d8b266c-f168-4fe6-891a-716996cbf21e)
-![Image](https://github.com/user-attachments/assets/729091e4-bbe6-4637-928a-31817c9de584)
-![Image](https://github.com/user-attachments/assets/f0adbcb9-143f-4f72-a546-f307c1016da1)
-
+## Screenshots
+<img src="https://github.com/user-attachments/assets/b972dc53-940a-43f6-9f49-f5e7234796d6" width="200">
+<img src="https://github.com/user-attachments/assets/ca8dc97c-ec71-4f28-b7bb-e8f9065df8ab" width="200">
+<img src="https://github.com/user-attachments/assets/8d8b266c-f168-4fe6-891a-716996cbf21e" width="200">
+<img src="https://github.com/user-attachments/assets/729091e4-bbe6-4637-928a-31817c9de584" width="200">
+<img src="https://github.com/user-attachments/assets/f0adbcb9-143f-4f72-a546-f307c1016da1" width="200">
 ## FAQ
 
 #### Will this app be updated in the future?
