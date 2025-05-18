@@ -1,6 +1,5 @@
 
 # oneminute – AI-Powered News Summarizer
-
 **oneminute** is an Android application designed to enhance news consumption by providing concise, AI-generated summaries that can be read in just one minute. This app is ideal for busy professionals, students, and anyone who wants to stay informed quickly and efficiently.
 
 ## Features:
@@ -21,3 +20,39 @@
 
 ### Why oneminute?
 Unlike other news apps, **1 Minute** leverages generative AI to provide dynamic and user-specific summaries. It also offers an interactive **AI Chat Assistant** and **advanced geolocation filtering**.
+
+
+## Authors
+
+- [@lucatimpano](https://github.com/lucatimpano)
+
+
+## Badges
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+
+
+
+## Installation
+
+1.  **Find the APK:** Locate and download the `.apk` file in this repository.
+2.  **Transfer (If Needed):** Move the `.apk` file to your Android device.
+3.  **Enable Unknown Sources:** Go to **Settings** > **Apps** (or Security) > **Install unknown apps**. Enable for your file manager or browser.
+4.  **Install:** Open the `.apk` file on your device and follow the installation prompts. You might see a warning, but as this is from this repository, it is safe to install.
+5.  **Launch:** The app will be in your app drawer after installation.
+
+Consider disabling "Install unknown apps" afterward for security.
+    
+## Screenshots
+
+
+## FAQ
+
+#### Will this app be updated in the future?
+
+Currently, this app will not receive further updates as it was developed solely as a university project.
+
+#### Will this app continue to function in the future?
+
+The application's functionality relies on the Gemini 1.5 model. It is possible that the application may cease to function correctly once the Gemini 1.5 model is deprecated. After this event, the application might still be usable, but you may encounter crashes or errors during the generation process.
